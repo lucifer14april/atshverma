@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Useful Steps – Atshverma</title>
+    <meta name="description"
+        content="Follow these useful steps to participate in the contest and win exciting rewards.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --green1: #00c853;
+            --green2: #00e676;
+            --green3: #1de9b6;
+            --green-dark: #00a040;
+            --card-bg: rgba(255, 255, 255, 0.78);
+            --shadow: 0 24px 64px rgba(0, 180, 90, 0.13);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 32px 16px 48px;
+            background: linear-gradient(-45deg, #e8fff3, #f0fff8, #e6f9ff, #f5fff0);
+            background-size: 300% 300%;
+            animation: bgAnim 14s ease infinite;
+            overflow-x: hidden;
+        }
+
+        /* Floating blobs */
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        body::before {
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, #a8ffce, #00e676);
+            top: -60px;
+            left: -50px;
+            opacity: 0.55;
+        }
+
+        body::after {
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, #b2fef7, #00bcd4);
+            right: -60px;
+            bottom: -60px;
+            opacity: 0.45;
+        }
+
+        @keyframes bgAnim {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ── Card ── */
+        .card {
+            width: 100%;
+            max-width: 440px;
+            background: var(--card-bg);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1.5px solid rgba(255, 255, 255, 0.75);
+            border-radius: 32px;
+            padding: 28px 22px 24px;
+            box-shadow: var(--shadow), 0 2px 0 rgba(255, 255, 255, 0.9) inset;
+            position: relative;
+        }
+
+        /* ── Header ── */
+        .card-header {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .card-header .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--green1), var(--green3));
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 12px rgba(0, 200, 83, 0.35);
+        }
+
+        .card-header h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a2e1a;
+            letter-spacing: -0.3px;
+        }
+
+        .card-header p {
+            font-size: 13px;
+            color: #5a7a5a;
+            margin-top: 4px;
+            font-weight: 400;
+        }
+
+        .divider {
+            height: 1.5px;
+            background: linear-gradient(90deg, transparent, #c8f5dc, transparent);
+            margin: 18px 0;
+            border-radius: 2px;
+        }
+
+        /* ── Buttons ── */
+        .btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #fff;
+            padding: 15px 18px;
+            border-radius: 18px;
+            font-weight: 600;
+            font-size: 15px;
+            margin: 11px 0;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(.22, 1, .36, 1), box-shadow 0.3s;
+            background: linear-gradient(135deg, var(--green1) 0%, var(--green3) 100%);
+            box-shadow: 0 8px 24px rgba(0, 200, 83, 0.30), 0 2px 6px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            border: none;
+        }
+
+        /* Step number badge inside btn */
+        .btn .step-num {
+            background: rgba(255, 255, 255, 0.22);
+            border-radius: 10px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .btn .btn-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .btn .link-icon {
+            width: 28px;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: background 0.2s;
+        }
+
+        .btn .link-icon svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Shine sweep */
+        .btn::after {
+            content: "";
+            position: absolute;
+            left: -130%;
+            top: 0;
+            width: 65%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+            animation: shine 3.5s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            100% {
+                left: 160%;
+            }
+        }
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 36px rgba(0, 200, 83, 0.40), 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover .link-icon {
+            background: rgba(255, 255, 255, 0.32);
+        }
+
+        .btn:active {
+            transform: translateY(-1px) scale(0.99);
+        }
+
+        /* Subtle shade variation per button */
+        .btn:nth-of-type(1) {
+            background: linear-gradient(135deg, #00b341, #00e676);
+        }
+
+        .btn:nth-of-type(2) {
+            background: linear-gradient(135deg, #00a876, #1de9b6);
+        }
+
+        .btn:nth-of-type(3) {
+            background: linear-gradient(135deg, #00c853, #69f0ae);
+        }
+
+        .btn:nth-of-type(4) {
+            background: linear-gradient(135deg, #00897b, #26c6da);
+        }
+
+        .btn:nth-of-type(5) {
+            background: linear-gradient(135deg, #00c020, #00e5ff);
+        }
+
+        /* ── Tutorial Box ── */
+        .tutorial {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 180, 90, 0.10);
+            margin: 14px 0;
+            border: 1px solid rgba(0, 200, 83, 0.12);
+        }
+
+        .head {
+            padding: 14px 18px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #1a3a1a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            background: linear-gradient(135deg, #f0fff5, #e8fff0);
+            transition: background 0.2s;
+        }
+
+        .head:hover {
+            background: linear-gradient(135deg, #e0ffec, #d0ffe4);
+        }
+
+        .head .head-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .head .tut-icon {
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(135deg, #00c853, #1de9b6);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .head .tut-icon svg {
+            width: 13px;
+            height: 13px;
+            fill: #fff;
+        }
+
+        .head .chevron {
+            width: 28px;
+            height: 28px;
+            background: rgba(0, 200, 83, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        .head .chevron svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: #00c853;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .head.collapsed .chevron {
+            transform: rotate(180deg);
+        }
+
+        .video {
+            aspect-ratio: 16/9;
+        }
+
+        .video iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* ── Terms & Conditions – Professional Card ── */
+        .tc-section {
+            margin-top: 20px;
+            border: 1.5px solid rgba(0, 200, 83, 0.20);
+            border-radius: 22px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fff9, #f0fffc);
+            box-shadow: 0 6px 20px rgba(0, 180, 90, 0.08);
+        }
+
+        .tc-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 18px;
+            background: linear-gradient(135deg, rgba(0, 200, 83, 0.10), rgba(29, 233, 182, 0.08));
+            border-bottom: 1px solid rgba(0, 200, 83, 0.12);
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .tc-header:hover {
+            background: linear-gradient(135deg, rgba(0, 200, 83, 0.18), rgba(29, 233, 182, 0.14));
+        }
+
+        .tc-badge {
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(135deg, #00c853, #1de9b6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0, 200, 83, 0.30);
+        }
+
+        .tc-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: #fff;
+        }
+
+        .tc-title-group {
+            flex: 1;
+        }
+
+        .tc-title-group h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a3a1a;
+        }
+
+        .tc-title-group span {
+            font-size: 11px;
+            color: #5a8a6a;
+            font-weight: 400;
+        }
+
+        .tc-chevron {
+            width: 28px;
+            height: 28px;
+            background: rgba(0, 200, 83, 0.10);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.35s cubic-bezier(.22, 1, .36, 1);
+            flex-shrink: 0;
+        }
+
+        .tc-chevron svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: #00c853;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .tc-chevron.open {
+            transform: rotate(180deg);
+        }
+
+        .tc-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .tc-body.expanded {
+            max-height: 600px;
+        }
+
+        .tc-inner {
+            padding: 16px 18px 20px;
+        }
+
+        .tc-clause {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            align-items: flex-start;
+        }
+
+        .tc-clause:last-child {
+            margin-bottom: 0;
+        }
+
+        .tc-clause-num {
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(135deg, #00c853, #1de9b6);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .tc-clause-content {
+            flex: 1;
+        }
+
+        .tc-clause-content strong {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1a3a1a;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .tc-clause-content ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .tc-clause-content ul li {
+            font-size: 12.5px;
+            color: #4a6a4a;
+            line-height: 1.6;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .tc-clause-content ul li::before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            color: #00c853;
+            font-weight: 700;
+        }
+
+        .tc-clause-content ul li b {
+            color: #007a30;
+        }
+
+        .tc-footer {
+            padding: 10px 18px 14px;
+            font-size: 11px;
+            color: #7a9a7a;
+            text-align: center;
+            border-top: 1px dashed rgba(0, 200, 83, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+
+        <!-- Header -->
+        <div class="card-header">
+            <div class="badge">🏆 Contest Guide</div>
+            <h2>Useful Steps</h2>
+            <p>Complete all steps to win exciting prizes</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Step 1 -->
+        <a class="btn" href="https://1024terabox.com/s/1Dsb2cYtmDOpMtUc-Xv5Qpg" id="btn-step1">
+            <div class="step-num">1</div>
+            <div class="btn-text">First Step</div>
+            <div class="link-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+            </div>
+        </a>
+
+        <!-- Tutorial (collapsible) -->
+        <div class="tutorial">
+            <div class="head" id="tutHead">
+                <div class="head-left">
+                    <div class="tut-icon">
+                        <svg viewBox="0 0 24 24">
+                            <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
+                    </div>
+                    Tutorial Video
+                </div>
+                <div class="chevron">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="18 15 12 9 6 15" />
+                    </svg>
+                </div>
+            </div>
+            <div class="video" id="tutVideo">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Steps 2–5 -->
+        <a class="btn" href="https://1024terabox.com/s/10m18ZlN3NtI3pgMFGzzZSg" id="btn-step2">
+            <div class="step-num">2</div>
+            <div class="btn-text">Second Step</div>
+            <div class="link-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+            </div>
+        </a>
+        <a class="btn" href="https://1024terabox.com/s/1FFYYy9T4naALjoK6sGiq4w" id="btn-step3">
+            <div class="step-num">3</div>
+            <div class="btn-text">Third Step</div>
+            <div class="link-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+            </div>
+        </a>
+        <a class="btn" href="https://1024terabox.com/s/1hu28Xor9KyBCaX4AddYH-Q" id="btn-step4">
+            <div class="step-num">4</div>
+            <div class="btn-text">Fourth Step</div>
+            <div class="link-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+            </div>
+        </a>
+        <a class="btn" href="https://1024terabox.com/s/1U_AI6E4ybjFni-JWFBEqDg" id="btn-step5">
+            <div class="step-num">5</div>
+            <div class="btn-text">Fifth Step</div>
+            <div class="link-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+            </div>
+        </a>
+
+        <!-- ── Terms & Conditions – Professional Accordion ── -->
+        <div class="tc-section">
+            <div class="tc-header" id="tcToggle">
+                <div class="tc-badge">
+                    <!-- Document icon -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                        <polyline points="10 9 9 9 8 9" />
+                    </svg>
+                </div>
+                <div class="tc-title-group">
+                    <h4>Terms &amp; Conditions</h4>
+                    <span>Contest Rules &amp; Guidelines</span>
+                </div>
+                <div class="tc-chevron" id="tcChevron">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="tc-body" id="tcBody">
+                <div class="tc-inner">
+
+                    <div class="tc-clause">
+                        <div class="tc-clause-num">1</div>
+                        <div class="tc-clause-content">
+                            <strong>Eligibility</strong>
+                            <ul>
+                                <li>Age 18+ required</li>
+                                <li>Entry is completely free</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tc-clause">
+                        <div class="tc-clause-num">2</div>
+                        <div class="tc-clause-content">
+                            <strong>Mandatory Steps</strong>
+                            <ul>
+                                <li>Download TeraBox using the First Link</li>
+                                <li>Create a new account</li>
+                                <li>Refer at least 4 friends</li>
+                                <li>Send proof to <b>@mrrlig</b> on Telegram</li>
+                                <li>Comment on the main video</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tc-clause">
+                        <div class="tc-
